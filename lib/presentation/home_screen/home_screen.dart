@@ -1,6 +1,9 @@
 import 'package:farmers_fresh_zone_clone/presentation/home_screen/appbar/custom_appbar.dart';
+import 'package:farmers_fresh_zone_clone/presentation/home_screen/widgets/custom_categories.dart';
 import 'package:farmers_fresh_zone_clone/presentation/home_screen/widgets/custom_catogories_chip.dart';
 import 'package:farmers_fresh_zone_clone/presentation/home_screen/widgets/services_available.dart';
+import 'package:farmers_fresh_zone_clone/presentation/home_screen/widgets/slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,41 +20,38 @@ class HomeScreen extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 const CustomCatogoriesChip(),
-                const SizedBox(
-                  height: 200,
-                  width: double.infinity,
-                ),
+                OffersSlider(),
                 const ServicesAvailable(),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('Shop By Category'),
+                SizedBox(
+                  height: 20,
                 ),
-                GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3),
-                  itemCount: 10,
-                  physics: const ClampingScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: ((context, index) {
-                    return Card(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height / 9,
-                            color: Colors.green,
-                          ),
-                          Center(
-                            child: Text(
-                                '${MediaQuery.of(context).size.height / 9}'),
-                          )
-                        ],
-                      ),
-                    );
-                  }),
-                )
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    'Shop By Category',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Custom_categories()
               ],
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.green,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'HOME',
+              backgroundColor: Colors.lightGreen),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart_outlined), label: 'CART'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'ACCOUNT')
         ],
       ),
     );

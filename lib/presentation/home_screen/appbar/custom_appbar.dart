@@ -12,7 +12,10 @@ class CustomAppBar extends StatelessWidget {
     return SliverAppBar(
       backgroundColor: kGreen,
       title: const Text('FARMERS FRESH ZONE',
-          style: TextStyle(fontWeight: FontWeight.bold)),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          )),
       floating: true,
       pinned: true,
       actions: [
@@ -37,7 +40,7 @@ class CustomAppBar extends StatelessWidget {
         )
       ],
       bottom: AppBar(
-        toolbarHeight: 70,
+        elevation: 0,
         backgroundColor: kGreen,
         centerTitle: true,
         title: const CustomSearchField(),

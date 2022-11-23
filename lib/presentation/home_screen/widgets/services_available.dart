@@ -1,4 +1,3 @@
-
 import 'package:farmers_fresh_zone_clone/core/color_config.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +9,7 @@ class ServicesAvailable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          vertical: 10.0, horizontal: 25),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25),
       child: Container(
         height: 80,
         width: double.infinity,
@@ -33,7 +31,7 @@ class ServicesAvailable extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  Icon(Icons.track_changes),
+                  Icon(Icons.send_to_mobile_outlined),
                   Text('TRACEBILITY')
                 ],
               ),
